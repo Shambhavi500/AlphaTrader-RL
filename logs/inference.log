@@ -1,0 +1,7 @@
+2026-04-05 15:18:14,534 [INFO] AlphaTrader-RL | OpenEnv Inference
+2026-04-05 15:18:14,535 [INFO] Seed: 42 | Initial capital: 100,000
+2026-04-05 15:18:14,566 [INFO] Loaded data: 11900 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI']
+2026-04-05 15:18:15,557 [INFO] =======================================================
+2026-04-05 15:18:15,557 [INFO] FINAL: 3/3 tasks passed
+2026-04-05 15:18:15,557 [INFO] Total runtime: 1.02s
+2026-04-05 15:18:15,558 [INFO] Results written to: inference_results.json

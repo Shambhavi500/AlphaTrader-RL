@@ -1,0 +1,8 @@
+Symbol               Return%   Sharpe  MaxDD%   T1_pass  T2_ok  T3_pass
+---------------------------------------------------------------------------
+TATASTEEL.NS          -21.36   -0.326   -36.84  NO       NO      NO 
+HINDALCO.NS           -16.43   -0.242   -36.45  NO       NO      NO 
+TATAPOWER.NS          -34.35   -0.752   -38.08  NO       NO      NO 
+YESBANK.NS             62.27    0.656   -31.44  YES      YES     NO 
+NMDC.NS                -7.15   -0.017   -37.68  NO       NO      NO 
+SUZLON.NS              49.37    0.503   -21.65  YES      YES     YES

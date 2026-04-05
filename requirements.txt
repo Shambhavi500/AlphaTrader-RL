@@ -1,17 +1,4 @@
-yfinance
 pandas
 numpy
-scikit-learn
 pyarrow
 gymnasium
-torch
-stable-baselines3
-matplotlib
-plotly
-anthropic
-tensorboard
-fastapi
-uvicorn
-python-dotenv
-scipy
-pandas_ta

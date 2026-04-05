@@ -1,0 +1,62 @@
+{
+  "TATASTEEL.NS": {
+    "return_pct": -21.36,
+    "sharpe": -0.326,
+    "max_dd_pct": -36.84,
+    "final_value": 78642.33,
+    "n_buys": 85,
+    "n_sells": 85,
+    "n_holds": 831,
+    "n_steps": 1002
+  },
+  "HINDALCO.NS": {
+    "return_pct": -16.43,
+    "sharpe": -0.242,
+    "max_dd_pct": -36.45,
+    "final_value": 83573.98,
+    "n_buys": 95,
+    "n_sells": 95,
+    "n_holds": 811,
+    "n_steps": 1002
+  },
+  "TATAPOWER.NS": {
+    "return_pct": -34.35,
+    "sharpe": -0.752,
+    "max_dd_pct": -38.08,
+    "final_value": 65645.1,
+    "n_buys": 84,
+    "n_sells": 84,
+    "n_holds": 833,
+    "n_steps": 1002
+  },
+  "YESBANK.NS": {
+    "return_pct": 62.27,
+    "sharpe": 0.656,
+    "max_dd_pct": -31.44,
+    "final_value": 162267.9,
+    "n_buys": 35,
+    "n_sells": 34,
+    "n_holds": 932,
+    "n_steps": 1002
+  },
+  "NMDC.NS": {
+    "return_pct": -7.15,
+    "sharpe": -0.017,
+    "max_dd_pct": -37.68,
+    "final_value": 92847.36,
+    "n_buys": 48,
+    "n_sells": 48,
+    "n_holds": 905,
+    "n_steps": 1002
+  },
+  "SUZLON.NS": {
+    "return_pct": 49.37,
+    "sharpe": 0.503,
+    "max_dd_pct": -21.65,
+    "final_value": 149374.4,
+    "n_buys": 72,
+    "n_sells": 71,
+    "n_holds": 858,
+    "n_steps": 1002
+  }
+}

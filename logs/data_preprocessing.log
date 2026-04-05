@@ -1,2 +1,277 @@
 2026-02-28 23:35:44,813 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
 2026-02-28 23:36:38,963 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-01 12:35:45,458 - AlphaAPI - ERROR - Trade execution failed: Model models/best_model.zip not found.
+2026-03-01 12:35:47,082 - AlphaAPI - ERROR - Trade execution failed: Model models/best_model.zip not found.
+2026-03-01 12:56:07,231 - AlphaAPI - ERROR - Trade execution failed: Model models/best_model.zip not found.
+2026-03-01 13:04:26,738 - AlphaAPI - ERROR - Trade execution failed: Model models/best_model.zip not found.
+2026-03-01 13:05:24,497 - AlphaAPI - ERROR - Trade execution failed: Model models/best_model.zip not found.
+2026-03-01 13:05:56,814 - AlphaAPI - INFO - best_model.zip missing, falling back to models/smoke_test_model
+2026-03-01 13:05:56,835 - AlphaAPI - ERROR - Trade execution failed: Observation spaces do not match: Box(-inf, inf, (41,), float32) != Box(-inf, inf, (7,), float32)
+2026-03-01 13:06:22,345 - AlphaAPI - ERROR - Trade execution failed: Model models/best_model.zip not found.
+2026-03-01 13:07:00,371 - AlphaAPI - INFO - best_model.zip missing, falling back to models/smoke_test_model
+2026-03-01 13:07:00,374 - AlphaAPI - ERROR - Trade execution failed: Observation spaces do not match: Box(-inf, inf, (41,), float32) != Box(-inf, inf, (7,), float32)
+2026-03-01 13:08:56,344 - AlphaAPI - INFO - best_model.zip missing, falling back to models/smoke_test_model
+2026-03-01 13:08:57,489 - PPOAgent - INFO - Model loaded from models/smoke_test_model
+2026-03-01 13:08:57,489 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-01 13:08:57,511 - LLMExplainer - INFO - explain_trade called: action=SELL
+2026-03-01 13:09:08,311 - AlphaAPI - INFO - Trade executed for TATASTEEL.NS: action=SELL, has_explanation=True
+2026-03-01 13:14:03,706 - AlphaAPI - INFO - best_model.zip missing, falling back to models/smoke_test_model
+2026-03-01 13:14:05,956 - PPOAgent - INFO - Model loaded from models/smoke_test_model
+2026-03-01 13:14:05,956 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-01 13:14:05,959 - LLMExplainer - INFO - explain_trade called: action=SELL
+2026-03-01 13:14:18,079 - AlphaAPI - INFO - Trade executed for TATASTEEL.NS: action=SELL, has_explanation=True
+2026-03-01 13:15:01,589 - LLMExplainer - INFO - explain_trade called: action=SELL
+2026-03-01 13:15:06,759 - AlphaAPI - INFO - Trade executed for TATASTEEL.NS: action=SELL, has_explanation=True
+2026-03-01 13:21:37,703 - Train - INFO - Loaded 1002 rows for symbol 'TATASTEEL.NS'.
+2026-03-01 13:21:37,710 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-01 13:21:38,626 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-01 13:21:38,626 - PPOAgent - INFO - Training started: total_timesteps=200000
+2026-03-01 13:30:19,120 - PPOAgent - INFO - Training complete.
+2026-03-01 13:30:19,271 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(-8.99), 'max_drawdown_pct': np.float64(-17.54), 'sharpe_ratio': -0.766, 'final_portfolio_value': 91011.76}
+2026-03-01 13:30:19,406 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(-8.99), 'max_drawdown_pct': np.float64(-17.54), 'sharpe_ratio': -0.766, 'final_portfolio_value': 91011.76}
+2026-03-01 13:30:19,542 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(-8.99), 'max_drawdown_pct': np.float64(-17.54), 'sharpe_ratio': -0.766, 'final_portfolio_value': 91011.76}
+2026-03-01 13:30:19,542 - PPOAgent - INFO - Evaluation mean Sharpe=-0.7660 over 3 episodes
+2026-03-01 13:30:19,542 - Train - INFO - Fold 1 | Val Sharpe=-0.7660
+2026-03-01 13:30:19,615 - PPOAgent - INFO - Model saved to models/best_model.zip
+2026-03-01 13:30:19,616 - Train - INFO - New best Sharpe=-0.7660 at fold 1 — model saved.
+2026-03-01 13:30:20,213 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(-0.19), 'max_drawdown_pct': np.float64(-2.89), 'sharpe_ratio': -0.031, 'final_portfolio_value': 99806.11}
+2026-03-01 13:30:20,485 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(-0.19), 'max_drawdown_pct': np.float64(-2.89), 'sharpe_ratio': -0.031, 'final_portfolio_value': 99806.11}
+2026-03-01 13:30:20,633 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(-0.19), 'max_drawdown_pct': np.float64(-2.89), 'sharpe_ratio': -0.031, 'final_portfolio_value': 99806.11}
+2026-03-01 13:30:20,633 - PPOAgent - INFO - Evaluation mean Sharpe=-0.0310 over 3 episodes
+2026-03-01 13:30:20,636 - Train - INFO - Final test Sharpe=-0.0310 | Summary: {'total_return_pct': np.float64(-0.19), 'max_drawdown_pct': np.float64(-2.89), 'sharpe_ratio': -0.031, 'final_portfolio_value': 99806.11}
+2026-03-01 14:07:50,084 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-01 14:07:53,197 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-01 14:07:53,197 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-01 14:07:53,208 - AlphaAPI - INFO - Fetching data for RELIANCE.NS dynamically...
+2026-03-01 14:07:54,644 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-01 14:07:54,644 - PaperTrader - INFO - Agent loaded for RELIANCE.NS
+2026-03-01 14:07:54,648 - AlphaAPI - INFO - Fetching data for INFY.NS dynamically...
+2026-03-01 14:07:55,665 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-01 14:07:55,665 - PaperTrader - INFO - Agent loaded for INFY.NS
+2026-03-01 14:13:25,816 - AlphaAPI - INFO - Fetching data for RELIANCE.NS dynamically...
+2026-03-01 14:13:28,720 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-01 14:13:28,720 - PaperTrader - INFO - Agent loaded for RELIANCE.NS
+2026-03-01 14:16:13,232 - AlphaAPI - INFO - Fetching data for RELIANCE.NS dynamically...
+2026-03-01 14:16:14,361 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-01 14:16:14,362 - PaperTrader - INFO - Agent loaded for RELIANCE.NS
+2026-03-01 14:25:51,436 - AlphaAPI - INFO - Fetching data for RELIANCE.NS dynamically...
+2026-03-01 14:25:52,045 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-01 14:25:52,045 - PaperTrader - INFO - Agent loaded for RELIANCE.NS
+2026-03-01 14:28:51,538 - yfinance - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BATCH"}}}
+2026-03-01 14:28:52,314 - yfinance - ERROR - $BATCH: possibly delisted; no price data found  (period=2d) (Yahoo error = "No data found, symbol may be delisted")
+2026-03-01 14:28:52,315 - AlphaAPI - ERROR - Price fetch failed for batch: No price data for batch
+2026-03-02 12:24:30,337 - AlphaAPI - INFO - Fetching data for INFY.NS dynamically...
+2026-03-02 12:24:34,316 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:24:34,316 - PaperTrader - INFO - Agent loaded for INFY.NS
+2026-03-02 12:35:54,390 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 12:35:56,826 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:35:56,826 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 12:35:56,831 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 12:35:57,775 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:35:57,775 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 12:35:57,778 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 12:35:58,770 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:35:58,770 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 12:35:58,773 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 12:36:00,493 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:36:00,493 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 12:38:41,997 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 12:38:42,835 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:38:42,836 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 12:38:42,841 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 12:38:44,357 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:38:44,358 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 12:38:44,361 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 12:38:45,637 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:38:45,637 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 12:38:45,641 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 12:38:46,789 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:38:46,789 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 12:39:33,949 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 12:39:34,495 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:39:34,495 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 12:39:34,502 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 12:39:34,902 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:39:34,903 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 12:39:34,906 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 12:39:35,384 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:39:35,385 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 12:39:35,391 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 12:39:35,957 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:39:35,957 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 12:40:05,587 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 12:40:06,076 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:40:06,077 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 12:40:06,085 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 12:40:06,589 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:40:06,589 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 12:40:06,596 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 12:40:07,039 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:40:07,039 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 12:40:07,042 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 12:40:07,505 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:40:07,505 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 12:47:53,590 - Train - INFO - Loaded 2002 rows for symbol 'GOLDBEES.NS'.
+2026-03-02 12:47:53,593 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-02 12:47:54,573 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-02 12:47:54,573 - PPOAgent - INFO - Training started: total_timesteps=200000
+2026-03-02 12:48:34,227 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 12:48:35,171 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:48:35,171 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 12:48:35,174 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 12:48:36,289 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:48:36,289 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 12:48:36,292 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 12:48:38,040 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:48:38,040 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 12:48:38,046 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 12:48:39,426 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:48:39,426 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 12:53:13,788 - AlphaAPI - INFO - Fetching data for INFY.NS dynamically...
+2026-03-02 12:53:14,256 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 12:53:14,256 - PaperTrader - INFO - Agent loaded for INFY.NS
+2026-03-02 12:55:38,886 - PPOAgent - INFO - Training complete.
+2026-03-02 12:55:39,199 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(3.38), 'max_drawdown_pct': np.float64(-9.62), 'sharpe_ratio': 0.402, 'final_portfolio_value': 103381.19}
+2026-03-02 12:55:39,612 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(3.38), 'max_drawdown_pct': np.float64(-9.62), 'sharpe_ratio': 0.402, 'final_portfolio_value': 103381.19}
+2026-03-02 12:55:39,901 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(3.38), 'max_drawdown_pct': np.float64(-9.62), 'sharpe_ratio': 0.402, 'final_portfolio_value': 103381.19}
+2026-03-02 12:55:39,901 - PPOAgent - INFO - Evaluation mean Sharpe=0.4020 over 3 episodes
+2026-03-02 12:55:39,902 - Train - INFO - Fold 1 | Val Sharpe=0.4020
+2026-03-02 12:55:40,015 - PPOAgent - INFO - Model saved to models/best_model.zip
+2026-03-02 12:55:40,016 - Train - INFO - New best Sharpe=0.4020 at fold 1 — model saved.
+2026-03-02 12:55:40,331 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(35.95), 'max_drawdown_pct': np.float64(-6.24), 'sharpe_ratio': 2.939, 'final_portfolio_value': 135954.62}
+2026-03-02 12:55:40,629 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(35.95), 'max_drawdown_pct': np.float64(-6.24), 'sharpe_ratio': 2.939, 'final_portfolio_value': 135954.62}
+2026-03-02 12:55:40,933 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(35.95), 'max_drawdown_pct': np.float64(-6.24), 'sharpe_ratio': 2.939, 'final_portfolio_value': 135954.62}
+2026-03-02 12:55:40,933 - PPOAgent - INFO - Evaluation mean Sharpe=2.9390 over 3 episodes
+2026-03-02 12:55:40,937 - Train - INFO - Final test Sharpe=2.9390 | Summary: {'total_return_pct': np.float64(35.95), 'max_drawdown_pct': np.float64(-6.24), 'sharpe_ratio': 2.939, 'final_portfolio_value': 135954.62}
+2026-03-02 13:34:25,251 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 13:34:25,729 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:34:25,730 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 13:34:25,733 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 13:34:26,252 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:34:26,252 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 13:34:26,256 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 13:34:26,819 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:34:26,819 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 13:34:26,823 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 13:34:27,328 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:34:27,328 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 13:35:19,750 - Train - INFO - Loaded 1888 rows for symbol 'SILVERBEES.NS'.
+2026-03-02 13:35:28,678 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 13:35:29,210 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:35:29,210 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 13:35:29,215 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 13:35:29,682 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:35:29,682 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 13:35:29,686 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 13:35:30,177 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:35:30,178 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 13:35:30,184 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 13:35:30,673 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 13:35:30,674 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 13:45:13,628 - Train - INFO - Loaded 996 rows for symbol '^NSEI'.
+2026-03-02 13:45:13,629 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-02 13:45:14,609 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-02 13:45:14,609 - PPOAgent - INFO - Training started: total_timesteps=100
+2026-03-02 13:45:16,991 - PPOAgent - INFO - Training complete.
+2026-03-02 13:45:17,076 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(1.6), 'max_drawdown_pct': np.float64(-5.96), 'sharpe_ratio': 0.373, 'final_portfolio_value': 101598.91}
+2026-03-02 13:45:17,077 - PPOAgent - INFO - Evaluation mean Sharpe=0.3730 over 1 episodes
+2026-03-02 13:45:17,077 - Train - INFO - Fold 1 | Val Sharpe=0.3730
+2026-03-02 13:45:17,121 - PPOAgent - INFO - Model saved to models/best_model.zip
+2026-03-02 13:45:17,121 - Train - INFO - New best Sharpe=0.3730 at fold 1 — model saved.
+2026-03-02 13:45:17,197 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(-1.59), 'max_drawdown_pct': np.float64(-2.54), 'sharpe_ratio': -1.133, 'final_portfolio_value': 98414.84}
+2026-03-02 13:45:17,197 - PPOAgent - INFO - Evaluation mean Sharpe=-1.1330 over 1 episodes
+2026-03-02 13:45:17,198 - Train - INFO - Final test Sharpe=-1.1330 | Summary: {'total_return_pct': np.float64(-1.59), 'max_drawdown_pct': np.float64(-2.54), 'sharpe_ratio': -1.133, 'final_portfolio_value': 98414.84}
+2026-03-02 13:47:31,436 - Train - INFO - Loaded 996 rows for symbol '^NSEI'.
+2026-03-02 13:47:31,438 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-02 13:47:32,180 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-02 13:47:32,180 - PPOAgent - INFO - Training started: total_timesteps=100
+2026-03-02 13:47:34,658 - PPOAgent - INFO - Training complete.
+2026-03-02 13:47:34,737 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(7.6), 'max_drawdown_pct': np.float64(-2.03), 'sharpe_ratio': 1.821, 'final_portfolio_value': 107604.42}
+2026-03-02 13:47:34,737 - PPOAgent - INFO - Evaluation mean Sharpe=1.8210 over 1 episodes
+2026-03-02 13:47:34,737 - Train - INFO - Fold 1 | Val Sharpe=1.8210
+2026-03-02 13:47:34,775 - PPOAgent - INFO - Model saved to models/best_model.zip
+2026-03-02 13:47:34,775 - Train - INFO - New best Sharpe=1.8210 at fold 1 — model saved.
+2026-03-02 13:47:34,858 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(-2.93), 'max_drawdown_pct': np.float64(-2.93), 'sharpe_ratio': -2.994, 'final_portfolio_value': 97066.61}
+2026-03-02 13:47:34,858 - PPOAgent - INFO - Evaluation mean Sharpe=-2.9940 over 1 episodes
+2026-03-02 13:47:34,860 - Train - INFO - Final test Sharpe=-2.9940 | Summary: {'total_return_pct': np.float64(-2.93), 'max_drawdown_pct': np.float64(-2.93), 'sharpe_ratio': -2.994, 'final_portfolio_value': 97066.61}
+2026-03-02 13:56:19,928 - Train - INFO - Loaded 1888 rows for symbol 'SILVERBEES.NS'.
+2026-03-02 13:56:20,659 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-02 13:56:20,659 - PPOAgent - INFO - Training started: total_timesteps=200000
+2026-03-02 14:00:07,654 - PPOAgent - INFO - Training complete.
+2026-03-02 14:00:07,851 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(-12.22), 'max_drawdown_pct': np.float64(-15.82), 'sharpe_ratio': -1.481, 'final_portfolio_value': 87776.04}
+2026-03-02 14:00:08,008 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(-12.22), 'max_drawdown_pct': np.float64(-15.82), 'sharpe_ratio': -1.481, 'final_portfolio_value': 87776.04}
+2026-03-02 14:00:08,167 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(-12.22), 'max_drawdown_pct': np.float64(-15.82), 'sharpe_ratio': -1.481, 'final_portfolio_value': 87776.04}
+2026-03-02 14:00:08,167 - PPOAgent - INFO - Evaluation mean Sharpe=-1.4810 over 3 episodes
+2026-03-02 14:00:08,167 - Train - INFO - Fold 1 | Val Sharpe=-1.4810
+2026-03-02 14:00:08,211 - PPOAgent - INFO - Model saved to models/best_model.zip
+2026-03-02 14:00:08,212 - Train - INFO - New best Sharpe=-1.4810 at fold 1 — model saved.
+2026-03-02 14:00:08,374 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(0.0), 'max_drawdown_pct': np.float64(0.0), 'sharpe_ratio': 0.0, 'final_portfolio_value': 100000.0}
+2026-03-02 14:00:08,533 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(0.0), 'max_drawdown_pct': np.float64(0.0), 'sharpe_ratio': 0.0, 'final_portfolio_value': 100000.0}
+2026-03-02 14:00:08,691 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(0.0), 'max_drawdown_pct': np.float64(0.0), 'sharpe_ratio': 0.0, 'final_portfolio_value': 100000.0}
+2026-03-02 14:00:08,692 - PPOAgent - INFO - Evaluation mean Sharpe=0.0000 over 3 episodes
+2026-03-02 14:00:08,693 - Train - INFO - Final test Sharpe=0.0000 | Summary: {'total_return_pct': np.float64(0.0), 'max_drawdown_pct': np.float64(0.0), 'sharpe_ratio': 0.0, 'final_portfolio_value': 100000.0}
+2026-03-02 14:31:54,999 - Train - INFO - Loaded 1002 rows for symbol 'TATAPOWER.NS'.
+2026-03-02 14:31:55,000 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-02 14:31:55,692 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-02 14:31:55,692 - PPOAgent - INFO - Training started: total_timesteps=500000
+2026-03-02 14:38:54,584 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 14:38:54,967 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 14:38:54,967 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 14:38:54,972 - AlphaAPI - INFO - Fetching data for SILVERBEES.NS dynamically...
+2026-03-02 14:38:55,505 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 14:38:55,505 - PaperTrader - INFO - Agent loaded for SILVERBEES.NS
+2026-03-02 14:38:55,509 - AlphaAPI - INFO - Fetching data for TATAPOWER.NS dynamically...
+2026-03-02 14:38:56,680 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 14:38:56,680 - PaperTrader - INFO - Agent loaded for TATAPOWER.NS
+2026-03-02 14:38:56,683 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 14:38:57,136 - PPOAgent - INFO - Model loaded from models/best_model
+2026-03-02 14:38:57,136 - PaperTrader - INFO - Agent loaded for TATASTEEL.NS
+2026-03-02 14:46:22,904 - PPOAgent - INFO - Training complete.
+2026-03-02 14:46:23,003 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(8.27), 'max_drawdown_pct': np.float64(-3.78), 'sharpe_ratio': 1.197, 'final_portfolio_value': 108270.14}
+2026-03-02 14:46:23,080 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(8.27), 'max_drawdown_pct': np.float64(-3.78), 'sharpe_ratio': 1.197, 'final_portfolio_value': 108270.14}
+2026-03-02 14:46:23,156 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(8.27), 'max_drawdown_pct': np.float64(-3.78), 'sharpe_ratio': 1.197, 'final_portfolio_value': 108270.14}
+2026-03-02 14:46:23,156 - PPOAgent - INFO - Evaluation mean Sharpe=1.1970 over 3 episodes
+2026-03-02 14:46:23,156 - Train - INFO - Fold 1 | Val Sharpe=1.1970
+2026-03-02 14:46:23,205 - PPOAgent - INFO - Model saved to models/best_model.zip
+2026-03-02 14:46:23,206 - Train - INFO - New best Sharpe=1.1970 at fold 1 — model saved.
+2026-03-02 14:46:23,278 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(6.08), 'max_drawdown_pct': np.float64(-3.89), 'sharpe_ratio': 1.239, 'final_portfolio_value': 106078.02}
+2026-03-02 14:46:23,348 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(6.08), 'max_drawdown_pct': np.float64(-3.89), 'sharpe_ratio': 1.239, 'final_portfolio_value': 106078.02}
+2026-03-02 14:46:23,418 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(6.08), 'max_drawdown_pct': np.float64(-3.89), 'sharpe_ratio': 1.239, 'final_portfolio_value': 106078.02}
+2026-03-02 14:46:23,418 - PPOAgent - INFO - Evaluation mean Sharpe=1.2390 over 3 episodes
+2026-03-02 14:46:23,421 - Train - INFO - Final test Sharpe=1.2390 | Summary: {'total_return_pct': np.float64(6.08), 'max_drawdown_pct': np.float64(-3.89), 'sharpe_ratio': 1.239, 'final_portfolio_value': 106078.02}
+2026-03-02 14:47:25,487 - Train - INFO - Loaded 1002 rows for symbol 'TATASTEEL.NS'.
+2026-03-02 14:47:25,488 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-02 14:47:26,453 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-02 14:47:26,453 - PPOAgent - INFO - Training started: total_timesteps=500000
+2026-03-02 15:01:51,587 - PPOAgent - INFO - Training complete.
+2026-03-02 15:01:51,663 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(-7.86), 'max_drawdown_pct': np.float64(-16.89), 'sharpe_ratio': -0.685, 'final_portfolio_value': 92141.05}
+2026-03-02 15:01:51,745 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(-7.86), 'max_drawdown_pct': np.float64(-16.89), 'sharpe_ratio': -0.685, 'final_portfolio_value': 92141.05}
+2026-03-02 15:01:51,816 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(-7.86), 'max_drawdown_pct': np.float64(-16.89), 'sharpe_ratio': -0.685, 'final_portfolio_value': 92141.05}
+2026-03-02 15:01:51,816 - PPOAgent - INFO - Evaluation mean Sharpe=-0.6850 over 3 episodes
+2026-03-02 15:01:51,816 - Train - INFO - Fold 1 | Val Sharpe=-0.6850
+2026-03-02 15:01:51,871 - PPOAgent - INFO - Model saved to models/best_model.zip
+2026-03-02 15:01:51,872 - Train - INFO - New best Sharpe=-0.6850 at fold 1 — model saved.
+2026-03-02 15:01:51,942 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(-1.79), 'max_drawdown_pct': np.float64(-7.75), 'sharpe_ratio': -0.346, 'final_portfolio_value': 98209.57}
+2026-03-02 15:01:52,011 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(-1.79), 'max_drawdown_pct': np.float64(-7.75), 'sharpe_ratio': -0.346, 'final_portfolio_value': 98209.57}
+2026-03-02 15:01:52,082 - PPOAgent - INFO - Episode 3 summary: {'total_return_pct': np.float64(-1.79), 'max_drawdown_pct': np.float64(-7.75), 'sharpe_ratio': -0.346, 'final_portfolio_value': 98209.57}
+2026-03-02 15:01:52,083 - PPOAgent - INFO - Evaluation mean Sharpe=-0.3460 over 3 episodes
+2026-03-02 15:01:52,086 - Train - INFO - Final test Sharpe=-0.3460 | Summary: {'total_return_pct': np.float64(-1.79), 'max_drawdown_pct': np.float64(-7.75), 'sharpe_ratio': -0.346, 'final_portfolio_value': 98209.57}
+2026-03-02 15:38:55,294 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 15:38:57,067 - PPOAgent - INFO - Model loaded from models/GOLDBEES.NS_model
+2026-03-02 15:38:57,067 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 15:38:57,090 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 15:39:42,088 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 15:39:42,742 - PPOAgent - INFO - Model loaded from models/GOLDBEES.NS_model
+2026-03-02 15:39:42,743 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 15:39:42,747 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 15:40:18,869 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 15:40:19,554 - PPOAgent - INFO - Model loaded from models/GOLDBEES.NS_model
+2026-03-02 15:40:19,554 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 15:43:56,524 - AlphaAPI - INFO - Fetching data for GOLDBEES.NS dynamically...
+2026-03-02 15:44:00,498 - PPOAgent - INFO - Model loaded from models/GOLDBEES.NS_model
+2026-03-02 15:44:00,498 - PaperTrader - INFO - Agent loaded for GOLDBEES.NS
+2026-03-02 15:44:00,503 - AlphaAPI - INFO - Fetching data for TATASTEEL.NS dynamically...
+2026-03-02 15:49:44,582 - Train - INFO - Loaded 2002 rows for symbol 'GOLDBEES.NS'.
+2026-03-02 15:49:44,585 - Preprocessor - INFO - Fold created: Train 2022-02-04 to 2025-02-04, Val to 2025-08-04, Test to 2026-02-04
+2026-03-02 15:49:45,319 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-02 15:49:45,320 - PPOAgent - INFO - Training started: total_timesteps=1000000

@@ -1,0 +1,4 @@
+TATASTEEL.NS: return=-21.36%  sharpe=-0.326  max_dd=-36.84%
+HINDALCO.NS: return=-16.43%  sharpe=-0.242  max_dd=-36.45%
+TATAPOWER.NS: return=-34.35%  sharpe=-0.752  max_dd=-38.08%
+YESBANK.NS: return=62.27%  sharpe=0.656  max_dd=-31.44%

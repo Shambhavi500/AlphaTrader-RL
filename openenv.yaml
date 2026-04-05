@@ -1,0 +1,178 @@
+name: AlphaTrader-RL
+version: "1.0.0"
+description: >
+  A reinforcement-learning trading environment built on NSE (Indian stock market) data.
+  An agent learns to BUY, SELL, or HOLD a portfolio of stocks over historical price data.
+  Three tasks of increasing difficulty test single-stock returns, multi-stock Sharpe ratio,
+  and survival through a highly volatile stock.
+
+author: Shambhavi Patil
+license: MIT
+framework: gymnasium
+
+# ---------------------------------------------------------------------------
+# Action Space
+# ---------------------------------------------------------------------------
+action_space:
+  type: Discrete
+  n: 3
+  labels:
+    0: HOLD
+    1: BUY
+    2: SELL
+
+# ---------------------------------------------------------------------------
+# Observation Space
+# ---------------------------------------------------------------------------
+observation_space:
+  type: Box
+  dtype: float32
+  low: -10.0
+  high: 10.0
+  description: >
+    Market feature vector (RSI, MACD, Bollinger Bands, ATR, volume ratio,
+    EMA distances, momentum) concatenated with 5 portfolio-state scalars
+    (cash ratio, position ratio, return, drawdown-from-peak, holding time).
+  components:
+    market_features:
+      description: Technical indicators computed from OHLCV data (no leakage)
+      example_columns:
+        - return_1d
+        - return_5d
+        - rsi_14
+        - macd_line
+        - macd_signal
+        - macd_histogram
+        - bb_percent_b
+        - bb_bandwidth
+        - atr_14
+        - volume_ratio
+        - dist_ema_20
+        - dist_ema_50
+    portfolio_state:
+      description: 5 scalars representing current portfolio state
+      dims: 5
+      columns:
+        - cash_ratio          # (cash / initial_capital) - 1
+        - position_ratio      # (shares * price) / initial_capital
+        - total_return        # (portfolio_value - initial_capital) / initial_capital
+        - drawdown_from_peak  # (portfolio_value - peak) / peak
+        - holding_time        # steps_since_last_trade / 20, clipped at 1
+
+# ---------------------------------------------------------------------------
+# Reward Design
+# ---------------------------------------------------------------------------
+reward:
+  description: >
+    Composite reward combining several signals to shape agent behaviour.
+  components:
+    pnl:
+      formula: "step_return * pnl_scale * 100"
+      purpose: Incentivise portfolio growth
+    drawdown_penalty:
+      formula: "-loss_pct * drawdown_penalty_scale * 100  (when portfolio falls)"
+      purpose: Penalise losses more than symmetrically
+    transaction_cost_penalty:
+      formula: "-trade_cost_pct * trade_cost_penalty_scale * 100"
+      purpose: Discourage excessive trading
+    holding_penalty:
+      formula: "-holding_scale * log(1 + excess_steps) * 0.01"
+      purpose: Discourage stale long positions
+  clip: [-10.0, 10.0]
+
+# ---------------------------------------------------------------------------
+# Tasks
+# ---------------------------------------------------------------------------
+tasks:
+  - id: task1_single_stock
+    name: "Task 1 — Single Stock Trading (Easy)"
+    difficulty: easy
+    description: >
+      Trade a single NSE stock (TATASTEEL.NS) over ~3 years of daily data.
+      The agent must achieve a positive total portfolio return.
+    symbol: TATASTEEL.NS
+    initial_capital: 100000
+    grader:
+      metric: total_return_pct
+      operator: ">"
+      threshold: 0.0
+      pass_message: "Total return > 0% — PASS"
+      fail_message: "Total return ≤ 0% — FAIL"
+
+  - id: task2_multi_stock_portfolio
+    name: "Task 2 — Multi-Stock Portfolio (Medium)"
+    difficulty: medium
+    description: >
+      Trade 3 NSE stocks (TATASTEEL, HINDALCO, TATAPOWER) independently.
+      The agent must achieve an average annualised Sharpe ratio > 0.5.
+    symbols:
+      - TATASTEEL.NS
+      - HINDALCO.NS
+      - TATAPOWER.NS
+    initial_capital: 100000
+    grader:
+      metric: avg_sharpe_ratio
+      operator: ">"
+      threshold: 0.5
+      pass_message: "Avg Sharpe > 0.5 — PASS"
+      fail_message: "Avg Sharpe ≤ 0.5 — FAIL"
+
+  - id: task3_volatile_survival
+    name: "Task 3 — Volatile Market Survival (Hard)"
+    difficulty: hard
+    description: >
+      Trade YESBANK.NS — one of the most volatile NSE stocks — over its
+      full data history including its severe 2020 crash.
+      The agent must keep max drawdown above -25% (loss contained < 25%).
+    symbol: YESBANK.NS
+    initial_capital: 100000
+    grader:
+      metric: max_drawdown_pct
+      operator: ">"
+      threshold: -25.0
+      pass_message: "Max drawdown > -25% — PASS"
+      fail_message: "Max drawdown ≤ -25% — FAIL"
+
+# ---------------------------------------------------------------------------
+# Environment API
+# ---------------------------------------------------------------------------
+api:
+  - method: reset
+    signature: "reset(seed=None, options=None) -> (obs: np.ndarray, info: dict)"
+    description: Reset environment to start. Accepts optional seed for reproducibility.
+  - method: step
+    signature: "step(action: int) -> (obs, reward, terminated, truncated, info)"
+    description: Execute one trading day.
+  - method: state
+    signature: "state() -> dict"
+    description: Returns current portfolio snapshot (value, cash, return, Sharpe, drawdown).
+  - method: summary
+    signature: "summary() -> dict"
+    description: Episode-end metrics (return, max drawdown, Sharpe, final value).
+
+# ---------------------------------------------------------------------------
+# Data
+# ---------------------------------------------------------------------------
+data:
+  source: Yahoo Finance (yfinance)
+  market: NSE (National Stock Exchange of India)
+  frequency: daily (1d)
+  date_range: "2019-01-01 to present"
+  bundled_file: data/processed_market_data.parquet
+  description: >
+    Pre-processed parquet file bundled in the repo.
+    Includes OHLCV + all technical indicators.
+    No internet connection required at inference time.
+
+# ---------------------------------------------------------------------------
+# Inference
+# ---------------------------------------------------------------------------
+inference:
+  entrypoint: "python inference.py"
+  max_runtime_minutes: 20
+  output_file: inference_results.json
+  agent: >
+    Deterministic rule-based momentum agent:
+    BUY when RSI is low and MACD histogram is positive (oversold + positive momentum);
+    SELL when RSI is high or MACD histogram negative;
+    HOLD otherwise. Seeded for full reproducibility.

@@ -1,0 +1,11 @@
+2026-03-01 10:02:04,179 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)
+2026-03-01 10:02:04,179 - PPOAgent - INFO - Training started: total_timesteps=3000
+2026-03-01 10:08:38,237 - PPOAgent - INFO - PPOAgent initialised — obs_space=(41,)  tb_log=logs/tensorboard
+2026-03-01 10:08:38,237 - PPOAgent - INFO - Training started: total_timesteps=3000
+2026-03-01 10:08:43,134 - PPOAgent - INFO - Training complete.
+2026-03-01 10:08:43,366 - PPOAgent - INFO - Episode 1 summary: {'total_return_pct': np.float64(9.95), 'max_drawdown_pct': np.float64(-2.5), 'sharpe_ratio': 1.333, 'final_portfolio_value': 109947.95}
+2026-03-01 10:08:43,561 - PPOAgent - INFO - Episode 2 summary: {'total_return_pct': np.float64(9.95), 'max_drawdown_pct': np.float64(-2.5), 'sharpe_ratio': 1.333, 'final_portfolio_value': 109947.95}
+2026-03-01 10:08:43,562 - PPOAgent - INFO - Evaluation mean Sharpe=1.3330 over 2 episodes
+2026-03-01 10:08:43,606 - PPOAgent - INFO - Model saved to models/smoke_test_model.zip
+2026-03-01 10:21:01,619 - PPOAgent - INFO - Model loaded from models/smoke_test_model
+2026-03-01 10:21:04,779 - Backtest - INFO - Equity curve saved to logs/backtest_equity_curve.png

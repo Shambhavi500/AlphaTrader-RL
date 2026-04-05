@@ -1,0 +1,74 @@
+{
+  "environment": "AlphaTrader-RL",
+  "version": "1.0.0",
+  "seed": 42,
+  "total_runtime_seconds": 1.02,
+  "tasks_passed": 3,
+  "tasks_total": 3,
+  "overall_pass": true,
+  "results": [
+    {
+      "task_id": "task1_single_stock",
+      "difficulty": "easy",
+      "metric": "total_return_pct",
+      "threshold": "> 0.0",
+      "score": 1.0,
+      "passed": true,
+      "message": "Return 100.18% \u2014 PASS",
+      "episode": {
+        "total_return_pct": 100.18,
+        "max_drawdown_pct": -16.96,
+        "sharpe_ratio": 0.963,
+        "final_portfolio_value": 200179.17,
+        "total_reward": -533.5491,
+        "n_steps": 1001
+      },
+      "runtime_seconds": 0.2
+    },
+    {
+      "task_id": "task2_multi_stock_portfolio",
+      "difficulty": "medium",
+      "metric": "avg_sharpe_ratio",
+      "threshold": "> 0.5",
+      "score": 0.3193,
+      "passed": true,
+      "message": "Avg Sharpe 0.6387 \u2014 PASS",
+      "per_stock": {
+        "TATASTEEL.NS": {
+          "return_pct": 100.18,
+          "sharpe": 0.963,
+          "max_dd": -16.96
+        },
+        "HINDALCO.NS": {
+          "return_pct": 77.05,
+          "sharpe": 0.758,
+          "max_dd": -23.29
+        },
+        "TATAPOWER.NS": {
+          "return_pct": 7.87,
+          "sharpe": 0.196,
+          "max_dd": -39.27
+        }
+      },
+      "runtime_seconds": 0.59
+    },
+    {
+      "task_id": "task3_volatile_survival",
+      "difficulty": "hard",
+      "metric": "max_drawdown_pct",
+      "threshold": "> -25.0",
+      "score": 0.3211,
+      "passed": true,
+      "message": "Max Drawdown -16.97% \u2014 PASS",
+      "episode": {
+        "total_return_pct": 54.99,
+        "max_drawdown_pct": -16.97,
+        "sharpe_ratio": 0.822,
+        "final_portfolio_value": 154989.34,
+        "total_reward": -425.5138,
+        "n_steps": 1001
+      },
+      "runtime_seconds": 0.2
+    }
+  ]
+}
