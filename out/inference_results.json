@@ -1,0 +1,74 @@
+{
+  "environment": "AlphaTrader-RL",
+  "version": "1.0.0",
+  "seed": 42,
+  "total_runtime_seconds": 3.05,
+  "tasks_passed": 3,
+  "tasks_total": 3,
+  "overall_pass": true,
+  "results": [
+    {
+      "task_id": "task1_single_stock",
+      "difficulty": "easy",
+      "metric": "total_return_pct",
+      "threshold": "> 0.0",
+      "score": 0.5676,
+      "passed": true,
+      "message": "Return 56.76% \u2014 PASS",
+      "episode": {
+        "total_return_pct": 56.76,
+        "max_drawdown_pct": -21.22,
+        "sharpe_ratio": 0.701,
+        "final_portfolio_value": 156759.03,
+        "total_reward": -446.1316,
+        "n_steps": 1001
+      },
+      "runtime_seconds": 0.42
+    },
+    {
+      "task_id": "task2_multi_stock_portfolio",
+      "difficulty": "medium",
+      "metric": "avg_sharpe_ratio",
+      "threshold": "> 0.5",
+      "score": 0.2532,
+      "passed": true,
+      "message": "Avg Sharpe 0.5064 \u2014 PASS",
+      "per_stock": {
+        "TATASTEEL.NS": {
+          "return_pct": 50.01,
+          "sharpe": 1.21,
+          "max_dd": -12.62
+        },
+        "GOLDBEES.NS": {
+          "return_pct": 2.93,
+          "sharpe": 0.111,
+          "max_dd": -9.42
+        },
+        "SILVERBEES.NS": {
+          "return_pct": 6.1,
+          "sharpe": 0.198,
+          "max_dd": -9.85
+        }
+      },
+      "runtime_seconds": 2.18
+    },
+    {
+      "task_id": "task3_volatile_survival",
+      "difficulty": "hard",
+      "metric": "max_drawdown_pct",
+      "threshold": "> -25.0",
+      "score": 0.2897,
+      "passed": true,
+      "message": "Max Drawdown -17.76% \u2014 PASS",
+      "episode": {
+        "total_return_pct": -17.43,
+        "max_drawdown_pct": -17.76,
+        "sharpe_ratio": -1.005,
+        "final_portfolio_value": 82570.36,
+        "total_reward": -67.453,
+        "n_steps": 1001
+      },
+      "runtime_seconds": 0.43
+    }
+  ]
+}

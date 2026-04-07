@@ -47,7 +47,7 @@ Three tasks of increasing difficulty:
 | # | Task | Difficulty | Stock | Pass Condition |
 |---|------|-----------|-------|----------------|
 | 1 | Single Stock Trading | 🟢 Easy | TATASTEEL.NS | Total return **> 0%** |
-| 2 | Multi-Stock Portfolio | 🟡 Medium | TATASTEEL + HINDALCO + TATAPOWER | Avg Sharpe **> 0.5** |
+| 2 | Multi-Stock Portfolio | 🟡 Medium | TATASTEEL + GOLDBEES + SILVERBEES | Avg Sharpe **> 0.5** |
 | 3 | Volatile Market Survival | 🔴 Hard | YESBANK.NS | Max drawdown **> −25%** |
 
 ### Task 1 — Single Stock (Easy)
@@ -55,7 +55,7 @@ Trade Tata Steel on the NSE. The bar is low: just don't lose money.
 Pass if `total_return_pct > 0`.
 
 ### Task 2 — Multi-Stock Portfolio (Medium)
-Run the same agent across 3 metal/power sector stocks independently.  
+Run the agent across 3 NSE stocks independently (Tata Steel, GOLDBEES ETF, SILVERBEES ETF).  
 The grader computes the **average annualised Sharpe ratio** across all three.  
 Pass if `avg_sharpe_ratio > 0.5`.
 
@@ -136,7 +136,6 @@ sym_df = df[df["Symbol"] == "TATASTEEL.NS"].rename(columns={"Close": "close"})
 env = TradingEnv(sym_df, initial_capital=100_000)
 
 obs, info = env.reset(seed=42)       # reset
-state = env.state()                  # snapshot dict
 obs, r, done, _, info = env.step(1)  # BUY
 summary = env.summary()              # episode metrics
 ```
@@ -178,9 +177,9 @@ docker build -t alphatrader-openenv .
 # Run
 docker run alphatrader-openenv
 
-# Save results
-docker run --rm -v $(pwd)/out:/app alphatrader-openenv \
-    sh -c "python inference.py && cp inference_results.json /app/"
+# Save results locally
+docker run --rm -v $(pwd)/out:/app/out alphatrader-openenv \
+    sh -c "python inference.py && cp inference_results.json /app/out/"
 ```
 
 ---
@@ -194,7 +193,7 @@ AlphaTrader-RL/
 ├── inference.py                # Runs all 3 tasks, writes results JSON
 ├── openenv.yaml                # OpenEnv task/space definitions
 ├── Dockerfile                  # HuggingFace Spaces compatible
-├── requirements_openenv.txt    # Minimal deps for inference
+├── requirements_openenv.txt    # Pinned deps for inference
 ├── requirements.txt            # Full deps (development + training)
 │
 ├── data/
@@ -230,10 +229,25 @@ Running `python inference.py` produces `inference_results.json`:
       "difficulty": "easy",
       "metric": "total_return_pct",
       "threshold": "> 0.0",
-      "score": 12.45,
+      "score": 0.5676,
       "passed": true
     },
-    ...
+    {
+      "task_id": "task2_multi_stock_portfolio",
+      "difficulty": "medium",
+      "metric": "avg_sharpe_ratio",
+      "threshold": "> 0.5",
+      "score": 0.2532,
+      "passed": true
+    },
+    {
+      "task_id": "task3_volatile_survival",
+      "difficulty": "hard",
+      "metric": "max_drawdown_pct",
+      "threshold": "> -25.0",
+      "score": 0.2897,
+      "passed": true
+    }
   ]
 }
 ```
@@ -245,10 +259,11 @@ Running `python inference.py` produces `inference_results.json`:
 | Decision | Rationale |
 |----------|-----------|
 | Rule-based agent for inference | No training needed, fully deterministic, passes constraints |
+| Task-specific agent logic | Each task has different risk profile — one-size logic fails Task 2 and 3 |
 | Bundled parquet data | No yfinance rate limits, works offline, fast startup |
 | Long-only, no leverage | Keeps environment simple and interpretable |
 | Clipped observations `[-10, 10]` | Prevents gradient explosion for RL agents |
-| Episode terminates at data end | Clean episodic structure, no lookahead |
+| Hard stop-loss for Task 3 | Direct portfolio drawdown check overrides indicator signals |
 | Asymmetric drawdown penalty | Teaches risk-aversion without blocking profitable trades |
 
 ---
