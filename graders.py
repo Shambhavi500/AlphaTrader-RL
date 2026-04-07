@@ -89,7 +89,7 @@ def grade_task3(portfolio_history: list, initial_capital: float) -> dict:
     """
     Task 3 — Volatile Market Survival (Hard)
     PASS: max drawdown > -25% (i.e. loss is contained)
-    """
+    """ 
     mdd = _max_drawdown_pct(portfolio_history)
     passed = bool(mdd > -25.0)
     

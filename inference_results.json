@@ -2,8 +2,13 @@
   "environment": "AlphaTrader-RL",
   "version": "1.0.0",
   "seed": 42,
+<<<<<<< HEAD
   "total_runtime_seconds": 3.51,
   "tasks_passed": 1,
+=======
+  "total_runtime_seconds": 4.2,
+  "tasks_passed": 3,
+>>>>>>> b0e85194ab189ecee7b4a1aabd8b319aea69b552
   "tasks_total": 3,
   "overall_pass": false,
   "results": [
@@ -12,6 +17,7 @@
       "difficulty": "easy",
       "metric": "total_return_pct",
       "threshold": "> 0.0",
+<<<<<<< HEAD
       "score": 0.3588,
       "passed": true,
       "message": "Return 35.88% \u2014 PASS",
@@ -24,12 +30,27 @@
         "n_steps": 472
       },
       "runtime_seconds": 1.46
+=======
+      "score": 0.5676,
+      "passed": true,
+      "message": "Return 56.76% \u2014 PASS",
+      "episode": {
+        "total_return_pct": 56.76,
+        "max_drawdown_pct": -21.22,
+        "sharpe_ratio": 0.701,
+        "final_portfolio_value": 156759.03,
+        "total_reward": -446.1316,
+        "n_steps": 1001
+      },
+      "runtime_seconds": 0.64
+>>>>>>> b0e85194ab189ecee7b4a1aabd8b319aea69b552
     },
     {
       "task_id": "task2_multi_stock_portfolio",
       "difficulty": "medium",
       "metric": "avg_sharpe_ratio",
       "threshold": "> 0.5",
+<<<<<<< HEAD
       "score": 0.1794,
       "passed": false,
       "message": "Avg Sharpe 0.3587 \u2014 FAIL",
@@ -51,12 +72,36 @@
         }
       },
       "runtime_seconds": 1.43
+=======
+      "score": 0.2532,
+      "passed": true,
+      "message": "Avg Sharpe 0.5064 \u2014 PASS",
+      "per_stock": {
+        "TATASTEEL.NS": {
+          "return_pct": 50.01,
+          "sharpe": 1.21,
+          "max_dd": -12.62
+        },
+        "GOLDBEES.NS": {
+          "return_pct": 2.93,
+          "sharpe": 0.111,
+          "max_dd": -9.42
+        },
+        "SILVERBEES.NS": {
+          "return_pct": 6.1,
+          "sharpe": 0.198,
+          "max_dd": -9.85
+        }
+      },
+      "runtime_seconds": 2.92
+>>>>>>> b0e85194ab189ecee7b4a1aabd8b319aea69b552
     },
     {
       "task_id": "task3_volatile_survival",
       "difficulty": "hard",
       "metric": "max_drawdown_pct",
       "threshold": "> -25.0",
+<<<<<<< HEAD
       "score": 0.0,
       "passed": false,
       "message": "Max Drawdown -36.66% \u2014 FAIL",
@@ -69,6 +114,20 @@
         "n_steps": 1001
       },
       "runtime_seconds": 0.54
+=======
+      "score": 0.2897,
+      "passed": true,
+      "message": "Max Drawdown -17.76% \u2014 PASS",
+      "episode": {
+        "total_return_pct": -17.43,
+        "max_drawdown_pct": -17.76,
+        "sharpe_ratio": -1.005,
+        "final_portfolio_value": 82570.36,
+        "total_reward": -67.453,
+        "n_steps": 1001
+      },
+      "runtime_seconds": 0.6
+>>>>>>> b0e85194ab189ecee7b4a1aabd8b319aea69b552
     }
   ]
 }
