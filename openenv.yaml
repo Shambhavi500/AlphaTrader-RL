@@ -103,12 +103,12 @@ tasks:
     name: "Task 2 — Multi-Stock Portfolio (Medium)"
     difficulty: medium
     description: >
-      Trade 3 NSE stocks (TATASTEEL, HINDALCO, TATAPOWER) independently.
+      Trade 3 NSE stocks (TATASTEEL, GOLDBEES, SILVERBEES) independently.
       The agent must achieve an average annualised Sharpe ratio > 0.5.
     symbols:
       - TATASTEEL.NS
-      - HINDALCO.NS
-      - TATAPOWER.NS
+      - GOLDBEES.NS
+      - SILVERBEES.NS
     initial_capital: 100000
     grader:
       metric: avg_sharpe_ratio
@@ -172,7 +172,8 @@ inference:
   max_runtime_minutes: 20
   output_file: inference_results.json
   agent: >
-    Deterministic rule-based momentum agent:
-    BUY when RSI is low and MACD histogram is positive (oversold + positive momentum);
-    SELL when RSI is high or MACD histogram negative;
-    HOLD otherwise. Seeded for full reproducibility.
+    Deterministic rule-based momentum agent with task-specific logic:
+    Task 1 — moderate entry/exit thresholds for single stock profit;
+    Task 2 — strict entry (RSI < 55, MACD > 0, price above EMA50) for Sharpe protection;
+    Task 3 — tight entry + hard 8% stop-loss from peak for drawdown survival.
+    Seeded for full reproducibility.

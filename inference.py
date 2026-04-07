@@ -4,13 +4,20 @@ AlphaTrader-RL | OpenEnv Inference Script
 Runs all 3 tasks using a deterministic rule-based momentum agent.
 Logs results in OpenEnv-required JSON format.
 
-Agent strategy (reads raw indicator values directly from env.df)
-----------------------------------------------------------------
-  RSI < 35 AND MACD histogram > 0  → BUY  (oversold + turning up)
-  RSI > 65 OR  MACD histogram < 0  → SELL (overbought or declining)
-  else                              → HOLD
+Agent strategy — task-specific logic
+--------------------------------------
+  TASK 1 (Easy — single stock profit):
+    BUY  if RSI < 70 AND dist_ema50 > -0.01 AND macd_hist > -0.05
+    SELL if RSI > 75 OR dist_ema50 < -0.02
 
-No neural networks, no PPO, no randomness (fully seeded, deterministic).
+  TASK 2 (Medium — multi-stock Sharpe):
+    BUY  if RSI < 55 AND macd_hist > 0 AND dist_ema50 > 0   (strict — only clear uptrends)
+    SELL if RSI > 65 OR dist_ema50 < -0.015                 (exit faster to protect Sharpe)
+
+  TASK 3 (Hard — volatile survival):
+    BUY  if RSI < 45 AND macd_hist > 0 AND dist_ema50 > 0   (only strong confirmed entries)
+    SELL if RSI > 70 OR dist_ema50 < -0.01                  (exit early)
+         OR live drawdown from peak > 8%                    (hard stop-loss)
 """
 
 import os
@@ -62,8 +69,8 @@ random.seed(SEED)
 np.random.seed(SEED)
 
 TASK1_SYMBOL  = "TATASTEEL.NS"
-TASK2_SYMBOLS = ["TATASTEEL.NS", "HINDALCO.NS", "TATAPOWER.NS"]
-TASK3_SYMBOL  = "YESBANK.NS"   # highly volatile
+TASK2_SYMBOLS = ["TATASTEEL.NS", "GOLDBEES.NS", "SILVERBEES.NS"]  # was HINDALCO, TATAPOWER
+TASK3_SYMBOL  = "YESBANK.NS"
 
 FEATURE_COLS = [
     "close",
@@ -123,14 +130,11 @@ def get_symbol_df(df: pd.DataFrame, symbol: str) -> pd.DataFrame:
         
         eng_df = eng_df.replace([np.inf, -np.inf], np.nan).dropna()
 
-        # Bug 2 Fix: Align eng_df columns with existing parquet schema to prevent corruption
         if os.path.exists(PARQUET_PATH):
             existing_df = pd.read_parquet(PARQUET_PATH)
-            # Add missing columns to eng_df with NaNs/0 so concat doesn't mess up existing rows
             for col in existing_df.columns:
                 if col not in eng_df.columns:
                     eng_df[col] = np.nan
-            # Reorder eng_df to match existing_df
             eng_df = eng_df[existing_df.columns]
             
             updated_df = pd.concat([existing_df, eng_df], ignore_index=True)
@@ -139,7 +143,6 @@ def get_symbol_df(df: pd.DataFrame, symbol: str) -> pd.DataFrame:
             
         sym_df = eng_df.copy()
 
-    # Bug 1 Fix: Validation check for new stocks
     if "Close" in sym_df.columns and "close" not in sym_df.columns:
         sym_df = sym_df.rename(columns={"Close": "close"})
 
@@ -147,16 +150,14 @@ def get_symbol_df(df: pd.DataFrame, symbol: str) -> pd.DataFrame:
 
     available = [c for c in FEATURE_COLS if c in sym_df.columns]
     
-    # Print sample for validation
     print(f"\n--- Validation for {symbol} ---")
     print(sym_df[available].head())
     
-    # Check for NaNs in critical feature columns
     critical = ["rsi_14", "macd_histogram", "dist_ema_50", "close"]
     for c in critical:
         if c in sym_df.columns:
             nan_count = sym_df[c].isna().sum()
-            if nan_count > (len(sym_df) * 0.5): # more than 50% NaN
+            if nan_count > (len(sym_df) * 0.5):
                  log.warning(f"Critical column '{c}' for '{symbol}' has {nan_count} NaNs.")
     
     sym_df = sym_df[available].dropna().reset_index(drop=True)
@@ -169,37 +170,82 @@ def get_symbol_df(df: pd.DataFrame, symbol: str) -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# Rule-based agent  (reads RAW feature values directly from env.df)
+# Rule-based agent  — task-specific logic
 # ---------------------------------------------------------------------------
-def get_action(env: TradingEnv, sym: str) -> int:
+def get_action(env: TradingEnv, sym: str, task_id: str = "task1") -> int:
     """
-    Universal deterministic momentum agent.
+    Task-specific deterministic momentum agent.
+
+    task_id: "task1" | "task2" | "task3"
     Returns: 0=HOLD, 1=BUY, 2=SELL
     """
     step = min(env.current_step, env.n_steps - 1)
     df   = env.df
-    
-    rsi = float(df.loc[step, "rsi_14"]) if "rsi_14" in df.columns else 50.0
+
+    rsi       = float(df.loc[step, "rsi_14"])       if "rsi_14"        in df.columns else 50.0
     macd_hist = float(df.loc[step, "macd_histogram"]) if "macd_histogram" in df.columns else 0.0
-    dist50 = float(df.loc[step, "dist_ema_50"]) if "dist_ema_50" in df.columns else 0.0
-    
+    dist50    = float(df.loc[step, "dist_ema_50"])   if "dist_ema_50"   in df.columns else 0.0
+
     holding = env.shares_held > 0
-    
-    if not holding:
-        # Relaxed universal logic to ensure trades hit on both original and new stocks.
-        # RSI < 70 and slightly allowing for EMA50 dips helps pass baseline benchmarks.
-        if rsi < 70 and dist50 > -0.01:
-            if macd_hist > -0.05: # Catching early turns
-                return 1 # BUY
-    else:
-        # Exit if RSI is overbought or price falls below EMA50 trend
-        if rsi > 75 or dist50 < -0.02:
-            return 2 # SELL
 
-    return 0  # HOLD
+    # ------------------------------------------------------------------
+    # TASK 1 — Easy: just make positive return, original logic is fine
+    # ------------------------------------------------------------------
+    if task_id == "task1":
+        if not holding:
+            if rsi < 70 and dist50 > -0.01 and macd_hist > -0.05:
+                return 1  # BUY
+        else:
+            if rsi > 75 or dist50 < -0.02:
+                return 2  # SELL
+        return 0  # HOLD
+
+    # ------------------------------------------------------------------
+    # TASK 2 — Medium: protect Sharpe across 3 stocks
+    #   Stricter entry: only buy confirmed uptrends
+    #   Faster exit: lock in gains before reversals drag Sharpe down
+    # ------------------------------------------------------------------
+    if task_id == "task2":
+        if not holding:
+            # All 3 conditions must be clearly bullish
+            if rsi < 55 and macd_hist > 0 and dist50 > 0:
+                return 1  # BUY
+        else:
+            # Exit early to protect ratio — don't wait for deep reversals
+            if rsi > 65 or dist50 < -0.015:
+                return 2  # SELL
+        return 0  # HOLD
+
+    # ------------------------------------------------------------------
+    # TASK 3 — Hard: survive volatile stock, drawdown must stay < 25%
+    #   Only enter on very strong confirmed signals
+    #   Exit at first sign of trouble OR if live drawdown > 8% from peak
+    # ------------------------------------------------------------------
+    if task_id == "task3":
+        # Live drawdown check — hard stop-loss independent of indicators
+        current_value = env._portfolio_value()
+        peak_value    = env.peak_portfolio_value
+        live_drawdown_pct = (current_value - peak_value) / (peak_value + 1e-8) * 100
+
+        if holding:
+            # Hard stop-loss: exit if we've lost 8% from our peak
+            if live_drawdown_pct < -8.0:
+                return 2  # SELL — capital protection
+            # Normal exit conditions (tighter than task1)
+            if rsi > 70 or dist50 < -0.01:
+                return 2  # SELL
+        else:
+            # Only buy on strong confirmed uptrend signals
+            if rsi < 45 and macd_hist > 0 and dist50 > 0:
+                return 1  # BUY
+
+        return 0  # HOLD
+
+    # Fallback
+    return 0
 
 
-def run_episode(env: TradingEnv, sym: str, seed: int = SEED) -> dict:
+def run_episode(env: TradingEnv, sym: str, task_id: str = "task1", seed: int = SEED) -> dict:
     """Run one episode with the rule-based agent. Returns summary + portfolio_history."""
     obs, _info = env.reset(seed=seed)
     done = False
@@ -207,7 +253,7 @@ def run_episode(env: TradingEnv, sym: str, seed: int = SEED) -> dict:
     n_steps = 0
 
     while not done:
-        action = get_action(env, sym)           # agent reads raw env.df
+        action = get_action(env, sym, task_id=task_id)
         obs, reward, terminated, truncated, _info = env.step(action)
         total_reward += reward
         done = terminated or truncated
@@ -231,7 +277,7 @@ def run_task1(df: pd.DataFrame) -> dict:
 
     sym_df = get_symbol_df(df, TASK1_SYMBOL)
     env    = TradingEnv(sym_df, initial_capital=INITIAL_CAPITAL)
-    result = run_episode(env, TASK1_SYMBOL)
+    result = run_episode(env, TASK1_SYMBOL, task_id="task1")
 
     ph    = result.pop("portfolio_history")
     grade = grade_task1(ph, INITIAL_CAPITAL)
@@ -259,7 +305,8 @@ def run_task2(df: pd.DataFrame) -> dict:
     for symbol in TASK2_SYMBOLS:
         sym_df = get_symbol_df(df, symbol)
         env    = TradingEnv(sym_df, initial_capital=INITIAL_CAPITAL)
-        result = run_episode(env, symbol)
+        # task_id="task2" — stricter entry, faster exit per stock
+        result = run_episode(env, symbol, task_id="task2")
         ph     = result.pop("portfolio_history")
         all_ph.append(ph)
         per_stock[symbol] = {
@@ -286,7 +333,7 @@ def run_task3(df: pd.DataFrame) -> dict:
 
     sym_df = get_symbol_df(df, TASK3_SYMBOL)
 
-    # Conservative reward: heavier drawdown penalty for volatile market
+    # Conservative reward: heavier drawdown penalty (matters for RL training context)
     conservative_reward = RewardCalculator(
         pnl_scale=0.8,
         drawdown_penalty_scale=4.0,
@@ -299,7 +346,8 @@ def run_task3(df: pd.DataFrame) -> dict:
         initial_capital=INITIAL_CAPITAL,
         reward_calculator=conservative_reward,
     )
-    result = run_episode(env, TASK3_SYMBOL)
+    # task_id="task3" — hard stop-loss at 8% live drawdown
+    result = run_episode(env, TASK3_SYMBOL, task_id="task3")
 
     ph    = result.pop("portfolio_history")
     grade = grade_task3(ph, INITIAL_CAPITAL)
@@ -320,7 +368,7 @@ def run_task3(df: pd.DataFrame) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description="AlphaTrader-RL Inference")
     parser.add_argument("--task1", type=str, default="TATASTEEL.NS", help="Symbol for Task 1")
-    parser.add_argument("--task2", type=str, nargs="+", default=["TATASTEEL.NS", "HINDALCO.NS", "TATAPOWER.NS"], help="Symbols for Task 2")
+    parser.add_argument("--task2", type=str, nargs="+", default=["TATASTEEL.NS", "GOLDBEES.NS", "SILVERBEES.NS"], help="Symbols for Task 2")
     parser.add_argument("--task3", type=str, default="YESBANK.NS", help="Symbol for Task 3")
     args = parser.parse_args()
 
@@ -371,13 +419,11 @@ def main() -> int:
     log.info(f"FINAL: {passed_count}/{len(results)} tasks passed")
     log.info(f"Total runtime: {total_elapsed}s")
 
-    # Write JSON
     output_path = "inference_results.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, default=str)
     log.info(f"Results written to: {output_path}")
 
-    # Print summary to stdout (ASCII-safe for cross-platform compatibility)
     print("\n" + "=" * 55)
     print("OPENENV RESULTS")
     print("=" * 55)

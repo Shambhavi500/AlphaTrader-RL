@@ -2,7 +2,7 @@
   "environment": "AlphaTrader-RL",
   "version": "1.0.0",
   "seed": 42,
-  "total_runtime_seconds": 4.2,
+  "total_runtime_seconds": 3.05,
   "tasks_passed": 3,
   "tasks_total": 3,
   "overall_pass": true,
@@ -23,7 +23,7 @@
         "total_reward": -446.1316,
         "n_steps": 1001
       },
-      "runtime_seconds": 0.64
+      "runtime_seconds": 0.42
     },
     {
       "task_id": "task2_multi_stock_portfolio",
@@ -50,7 +50,7 @@
           "max_dd": -9.85
         }
       },
-      "runtime_seconds": 2.92
+      "runtime_seconds": 2.18
     },
     {
       "task_id": "task3_volatile_survival",
@@ -68,7 +68,7 @@
         "total_reward": -67.453,
         "n_steps": 1001
       },
-      "runtime_seconds": 0.6
+      "runtime_seconds": 0.43
     }
   ]
 }

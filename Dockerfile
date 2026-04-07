@@ -21,21 +21,25 @@ WORKDIR /app
 COPY requirements_openenv.txt ./
 RUN pip install --no-cache-dir -r requirements_openenv.txt
 
-# Copy source code and pre-processed data
+# Copy source code
 COPY trading_env.py   ./
 COPY graders.py       ./
 COPY inference.py     ./
 COPY openenv.yaml     ./
 
-# Copy only what's needed from data/ (the bundled parquet — no raw files)
+# Copy environment module (reward.py lives here)
+COPY environment/ ./environment/
+
+# Copy data module (pipeline.py needed for auto-fetch fallback)
 RUN mkdir -p data
-COPY data/processed_market_data.parquet data/
+COPY data/pipeline.py               ./data/
+COPY data/processed_market_data.parquet ./data/
 
 # Create logs directory
 RUN mkdir -p logs
 
-# Health check: verify imports work
-RUN python -c "from trading_env import TradingEnv; from graders import grade_task1; print('Import OK')"
+# Health check: verify all imports work
+RUN python -c "from trading_env import TradingEnv; from graders import grade_task1, grade_task2, grade_task3; from environment.reward import RewardCalculator; from data.pipeline import FeatureEngineer; print('All imports OK')"
 
 # Run inference
 CMD ["python", "inference.py"]

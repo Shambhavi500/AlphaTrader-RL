@@ -1,7 +1,7 @@
-2026-04-05 19:01:57,795 [INFO] AlphaTrader-RL | OpenEnv Inference
-2026-04-05 19:01:57,796 [INFO] Seed: 42 | Initial capital: 100,000
-2026-04-05 19:01:57,827 [INFO] Loaded data: 14265 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS']
-2026-04-05 19:01:59,686 [INFO] =======================================================
-2026-04-05 19:01:59,687 [INFO] FINAL: 3/3 tasks passed
-2026-04-05 19:01:59,687 [INFO] Total runtime: 1.89s
-2026-04-05 19:01:59,687 [INFO] Results written to: inference_results.json
+2026-04-05 21:29:20,090 [INFO] AlphaTrader-RL | OpenEnv Inference
+2026-04-05 21:29:20,090 [INFO] Seed: 42 | Initial capital: 100,000
+2026-04-05 21:29:20,126 [INFO] Loaded data: 14265 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS']
+2026-04-05 21:29:24,292 [INFO] =======================================================
+2026-04-05 21:29:24,292 [INFO] FINAL: 3/3 tasks passed
+2026-04-05 21:29:24,292 [INFO] Total runtime: 4.2s
+2026-04-05 21:29:24,293 [INFO] Results written to: inference_results.json
