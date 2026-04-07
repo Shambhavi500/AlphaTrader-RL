@@ -278,7 +278,7 @@ export default function App() {
                             </p>
                         </div>
                         <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Powered by Ollama / Llama3</span>
+                            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Powered by xAI / Grok</span>
                             <BarChart3 className="w-4 h-4 text-slate-600" />
                         </div>
                     </div>

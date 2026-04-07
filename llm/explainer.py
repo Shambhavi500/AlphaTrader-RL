@@ -1,8 +1,8 @@
 """
-AlphaTrader-RL | Part 5: LLM Explainer (Ollama Edition)
-Uses a local Ollama instance (llama3:8b) to generate plain-English explanations.
-
-Ollama URL: http://127.0.0.1:11434/api/chat
+AlphaTrader-RL | LLM Explainer (OpenAI-compatible — xAI Grok)
+==============================================================
+Uses the OpenAI Python SDK pointed at xAI's API (https://api.x.ai/v1)
+to generate plain-English explanations of trading decisions.
 
 Functions
 ---------
@@ -15,46 +15,49 @@ explain_backtest_summary(metrics_dict)
 explain_live_signal(symbol, signal, sentiment, news_summary)
     → concise rationale for a live trading signal based on sentiment.
 """
-import json
 import logging
-import requests
-from typing import Any, Dict, Optional
+from typing import Any, Dict
+
+from openai import OpenAI
+
+from api import API_KEY, API_BASE_URL, MODEL_NAME
 
 logger = logging.getLogger("LLMExplainer")
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Ollama Config
+# OpenAI-compatible client (xAI Grok)
 # ──────────────────────────────────────────────────────────────────────────────
-_OLLAMA_URL = "http://127.0.0.1:11434/api/chat"
-_MODEL = "llama3:8b"
+_client = OpenAI(
+    api_key=API_KEY,
+    base_url=API_BASE_URL,
+)
 
-def _call_ollama(prompt: str) -> str:
-    """
-    Send a chat request to the local Ollama instance.
-    """
-    payload = {
-        "model": _MODEL,
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a professional financial analyst for AlphaTrader-RL. Provide clear, jargon-free explanations to investors."
-            },
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        "stream": False
-    }
+_SYSTEM_PROMPT = (
+    "You are a professional financial analyst for AlphaTrader-RL. "
+    "Provide clear, jargon-free explanations to investors."
+)
 
+
+def _call_llm(prompt: str) -> str:
+    """
+    Send a chat-completion request via the OpenAI SDK.
+    Falls back gracefully on any error.
+    """
     try:
-        response = requests.post(_OLLAMA_URL, json=payload, timeout=30)
-        response.raise_for_status()
-        data = response.json()
-        return data["message"]["content"]
+        response = _client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[
+                {"role": "system", "content": _SYSTEM_PROMPT},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.4,
+            max_tokens=512,
+        )
+        return response.choices[0].message.content.strip()
     except Exception as exc:
-        logger.error("Ollama call failed: %s", exc)
-        return f"[AI Error] {exc}"
+        logger.error("LLM call failed: %s", exc)
+        return f"[AI Unavailable] {exc}"
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Public API
@@ -88,7 +91,8 @@ Portfolio state:
 Explain in 2-3 clear sentences why the agent likely made this {action} decision. Focus on the relationship between the feature values and the action. Do not use bullets."""
 
     logger.info("explain_trade called: action=%s", action)
-    return _call_ollama(prompt)
+    return _call_llm(prompt)
+
 
 def explain_backtest_summary(metrics_dict: Dict[str, Any]) -> str:
     """
@@ -110,19 +114,20 @@ The agent {beat_bah} the benchmark by {abs(alpha):.2f}%.
 Write one coherent paragraph (4-6 sentences) explaining the return vs risk profile, comparing it to Buy-and-Hold, and giving a final verdict on performance."""
 
     logger.info("explain_backtest_summary called: alpha_pct=%s", alpha)
-    return _call_ollama(prompt)
+    return _call_llm(prompt)
+
 
 def explain_live_signal(
     symbol: str,
     signal: str,
     sentiment: float,
-    news_summary: str
+    news_summary: str,
 ) -> str:
     """
     Provide rationale for a live signal based on market sentiment.
     """
     prompt = f"""Provide a concise (1-2 sentence) rationale for a live trading signal.
-    
+
 Symbol: {symbol}
 Signal: {signal}
 Sentiment Score: {sentiment:.2f} (-1 to +1)
@@ -131,20 +136,25 @@ Recent News: {news_summary}
 Why is this signal being generated now?"""
 
     logger.info("explain_live_signal called: symbol=%s, signal=%s", symbol, signal)
-    return _call_ollama(prompt)
+    return _call_llm(prompt)
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Self-Test
 # ──────────────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    print(f"Testing Ollama integration with model: {_MODEL}...")
-    
+    print(f"Testing xAI Grok integration — model: {MODEL_NAME}")
+    print(f"Base URL: {API_BASE_URL}\n")
+
     test_features = {"rsi_14": 28.5, "volume_ratio": 2.1}
     test_portfolio = {"total_return_pct": 5.2, "shares_held": 0}
-    
-    print("\n--- Trade Explanation Test ---")
+
+    print("--- Trade Explanation Test ---")
     print(explain_trade("BUY", test_features, test_portfolio))
-    
+
     print("\n--- Live Signal Test ---")
-    print(explain_live_signal("TATASTEEL.NS", "BUY", 0.75, "Strong quarterly earnings reported today."))
+    print(explain_live_signal(
+        "TATASTEEL.NS", "BUY", 0.75,
+        "Strong quarterly earnings reported today."
+    ))

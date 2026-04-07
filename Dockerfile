@@ -21,11 +21,12 @@ WORKDIR /app
 COPY requirements_openenv.txt ./
 RUN pip install --no-cache-dir -r requirements_openenv.txt
 
-# Copy source code
+# Copy source code — core inference files
 COPY trading_env.py   ./
 COPY graders.py       ./
 COPY inference.py     ./
 COPY openenv.yaml     ./
+COPY .env              ./
 
 # Copy environment module (reward.py lives here)
 COPY environment/ ./environment/
@@ -35,11 +36,24 @@ RUN mkdir -p data
 COPY data/pipeline.py               ./data/
 COPY data/processed_market_data.parquet ./data/
 
+# Copy API module (config: API keys, base URL, model name)
+COPY api/ ./api/
+
+# Copy LLM module (OpenAI-compatible explainer)
+COPY llm/ ./llm/
+
 # Create logs directory
 RUN mkdir -p logs
 
 # Health check: verify all imports work
-RUN python -c "from trading_env import TradingEnv; from graders import grade_task1, grade_task2, grade_task3; from environment.reward import RewardCalculator; from data.pipeline import FeatureEngineer; print('All imports OK')"
+RUN python -c "\
+from trading_env import TradingEnv; \
+from graders import grade_task1, grade_task2, grade_task3; \
+from environment.reward import RewardCalculator; \
+from data.pipeline import FeatureEngineer; \
+from api import API_BASE_URL, MODEL_NAME; \
+from llm.explainer import explain_trade; \
+print('All imports OK')"
 
 # Run inference
 CMD ["python", "inference.py"]
