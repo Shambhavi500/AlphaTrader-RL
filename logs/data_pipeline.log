@@ -252,3 +252,306 @@
 2026-04-05 19:01:59,687 - inference - INFO - FINAL: 3/3 tasks passed
 2026-04-05 19:01:59,687 - inference - INFO - Total runtime: 1.89s
 2026-04-05 19:01:59,687 - inference - INFO - Results written to: inference_results.json
+2026-04-07 22:58:54,535 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-07 22:58:54,535 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-07 22:58:55,159 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-07 22:58:57,352 - inference - INFO - =======================================================
+2026-04-07 22:58:57,352 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-07 22:58:57,352 - inference - INFO - Total runtime: 2.82s
+2026-04-07 22:58:57,353 - inference - INFO - Results written to: inference_results.json
+2026-04-07 22:59:12,505 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-07 22:59:12,505 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-07 22:59:12,548 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-07 22:59:14,245 - inference - INFO - =======================================================
+2026-04-07 22:59:14,245 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-07 22:59:14,245 - inference - INFO - Total runtime: 1.74s
+2026-04-07 22:59:14,245 - inference - INFO - Results written to: inference_results.json
+2026-04-07 23:00:01,248 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-07 23:00:01,248 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-07 23:00:01,290 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-07 23:00:03,106 - inference - INFO - =======================================================
+2026-04-07 23:00:03,106 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-07 23:00:03,107 - inference - INFO - Total runtime: 1.86s
+2026-04-07 23:00:03,107 - inference - INFO - Results written to: inference_results.json
+2026-04-07 23:01:12,366 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-07 23:01:12,366 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-07 23:01:12,411 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-07 23:01:14,804 - inference - INFO - =======================================================
+2026-04-07 23:01:14,805 - inference - INFO - FINAL: 2/3 tasks passed
+2026-04-07 23:01:14,805 - inference - INFO - Total runtime: 2.44s
+2026-04-07 23:01:14,805 - inference - INFO - Results written to: inference_results.json
+2026-04-07 23:08:18,392 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-07 23:08:18,393 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-07 23:08:18,427 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-07 23:08:20,184 - inference - INFO - =======================================================
+2026-04-07 23:08:20,184 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-07 23:08:20,184 - inference - INFO - Total runtime: 1.79s
+2026-04-07 23:08:20,185 - inference - INFO - Results written to: inference_results.json
+2026-04-08 00:14:22,247 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 00:14:22,247 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 00:14:23,065 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 00:14:24,883 - inference - INFO - =======================================================
+2026-04-08 00:14:24,883 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 00:14:24,883 - inference - INFO - Total runtime: 2.64s
+2026-04-08 00:14:24,887 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:08:46,661 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:08:46,662 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:08:46,813 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:08:48,419 - inference - INFO - =======================================================
+2026-04-08 07:08:48,420 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:08:48,420 - inference - INFO - Total runtime: 1.76s
+2026-04-08 07:08:48,422 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:24:28,050 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:24:28,050 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:24:28,584 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:24:30,029 - inference - INFO - =======================================================
+2026-04-08 07:24:30,030 - inference - INFO - FINAL: 2/3 tasks passed
+2026-04-08 07:24:30,030 - inference - INFO - Total runtime: 1.98s
+2026-04-08 07:24:30,031 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:24:39,967 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:24:39,968 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:24:39,998 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:24:41,386 - inference - INFO - =======================================================
+2026-04-08 07:24:41,387 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:24:41,387 - inference - INFO - Total runtime: 1.42s
+2026-04-08 07:24:41,388 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:35:41,954 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:35:41,957 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:35:42,077 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:35:42,923 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:35:43,172 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:35:43,685 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:35:44,119 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:35:44,401 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:35:44,403 - inference - INFO - =======================================================
+2026-04-08 07:35:44,404 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:35:44,404 - inference - INFO - Total runtime: 2.45s
+2026-04-08 07:35:44,405 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:36:09,565 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:36:09,565 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:36:09,597 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:36:10,309 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:10,577 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:11,025 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:11,437 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:11,704 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:11,707 - inference - INFO - =======================================================
+2026-04-08 07:36:11,707 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:36:11,708 - inference - INFO - Total runtime: 2.14s
+2026-04-08 07:36:11,709 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:36:25,710 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:36:25,711 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:36:25,746 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:36:26,387 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:26,693 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:27,205 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:27,615 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:27,901 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-04-08 07:36:27,902 - inference - INFO - =======================================================
+2026-04-08 07:36:27,902 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:36:27,902 - inference - INFO - Total runtime: 2.19s
+2026-04-08 07:36:27,904 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:43:30,884 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:43:30,884 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:43:30,958 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:43:31,761 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:32,068 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:32,564 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:33,194 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:33,501 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:33,503 - inference - INFO - =======================================================
+2026-04-08 07:43:33,504 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:43:33,504 - inference - INFO - Total runtime: 2.62s
+2026-04-08 07:43:33,505 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:43:46,192 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:43:46,192 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:43:46,225 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:43:46,918 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:47,224 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:47,680 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:48,145 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:48,436 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:43:48,437 - inference - INFO - =======================================================
+2026-04-08 07:43:48,437 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:43:48,437 - inference - INFO - Total runtime: 2.24s
+2026-04-08 07:43:48,437 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:44:32,630 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:44:32,630 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:44:32,667 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:44:33,410 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:44:33,713 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:44:34,225 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:44:34,635 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:44:34,943 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:44:34,947 - inference - INFO - =======================================================
+2026-04-08 07:44:34,948 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:44:34,949 - inference - INFO - Total runtime: 2.32s
+2026-04-08 07:44:34,956 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:45:09,231 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:45:09,232 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:45:09,266 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:45:09,914 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:10,169 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:10,681 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:11,090 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:11,397 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:11,398 - inference - INFO - =======================================================
+2026-04-08 07:45:11,399 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:45:11,399 - inference - INFO - Total runtime: 2.17s
+2026-04-08 07:45:11,400 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:45:22,694 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:45:22,695 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:45:22,729 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:45:23,333 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:23,584 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:24,095 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:24,608 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:24,866 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:45:24,867 - inference - INFO - =======================================================
+2026-04-08 07:45:24,868 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:45:24,868 - inference - INFO - Total runtime: 2.17s
+2026-04-08 07:45:24,869 - inference - INFO - Results written to: inference_results.json
+2026-04-08 07:56:35,611 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 07:56:35,612 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 07:56:35,647 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 07:56:36,362 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:56:36,614 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:56:37,076 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:56:37,486 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:56:37,793 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 07:56:37,795 - inference - INFO - =======================================================
+2026-04-08 07:56:37,795 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 07:56:37,795 - inference - INFO - Total runtime: 2.18s
+2026-04-08 07:56:37,796 - inference - INFO - Results written to: inference_results.json
+2026-04-08 08:00:30,882 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 08:00:30,883 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 08:00:30,916 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 08:00:31,679 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:31,984 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:32,442 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:32,906 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:33,213 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:33,216 - inference - INFO - =======================================================
+2026-04-08 08:00:33,217 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 08:00:33,218 - inference - INFO - Total runtime: 2.33s
+2026-04-08 08:00:33,219 - inference - INFO - Results written to: inference_results.json
+2026-04-08 08:00:47,257 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 08:00:47,257 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 08:00:47,289 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 08:00:47,960 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:48,267 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:48,780 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:49,291 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:49,598 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:00:49,599 - inference - INFO - =======================================================
+2026-04-08 08:00:49,600 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 08:00:49,600 - inference - INFO - Total runtime: 2.34s
+2026-04-08 08:00:49,601 - inference - INFO - Results written to: inference_results.json
+2026-04-08 08:02:32,125 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 08:02:32,125 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 08:02:32,159 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 08:02:32,921 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:02:33,228 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:02:33,701 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:02:34,150 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:02:34,456 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 08:02:34,459 - inference - INFO - =======================================================
+2026-04-08 08:02:34,459 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 08:02:34,459 - inference - INFO - Total runtime: 2.33s
+2026-04-08 08:02:34,460 - inference - INFO - Results written to: inference_results.json
+2026-04-08 08:03:34,050 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 08:03:34,051 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 08:03:34,085 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 08:03:34,876 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 08:03:35,387 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 08:03:36,105 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 08:03:36,819 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 08:03:37,331 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 08:03:37,333 - inference - INFO - =======================================================
+2026-04-08 08:03:37,333 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 08:03:37,333 - inference - INFO - Total runtime: 3.28s
+2026-04-08 08:03:37,334 - inference - INFO - Results written to: inference_results.json
+2026-04-08 11:29:58,265 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 11:29:58,266 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 11:29:58,507 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 11:30:01,021 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:30:02,042 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:30:03,245 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:30:04,706 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:30:05,526 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:30:05,531 - inference - INFO - =======================================================
+2026-04-08 11:30:05,532 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 11:30:05,532 - inference - INFO - Total runtime: 7.27s
+2026-04-08 11:30:05,534 - inference - INFO - Results written to: inference_results.json
+2026-04-08 11:37:28,898 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 11:37:28,899 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 11:37:28,985 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 11:37:30,860 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:37:31,691 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:37:32,997 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:37:34,003 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:37:34,867 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:37:34,869 - inference - INFO - =======================================================
+2026-04-08 11:37:34,870 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 11:37:34,871 - inference - INFO - Total runtime: 5.97s
+2026-04-08 11:37:34,872 - inference - INFO - Results written to: inference_results.json
+2026-04-08 11:37:57,050 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 11:37:57,051 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 11:37:57,100 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 11:37:58,688 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:37:59,442 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:38:00,566 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:38:01,606 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:38:02,412 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:38:02,414 - inference - INFO - =======================================================
+2026-04-08 11:38:02,415 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 11:38:02,416 - inference - INFO - Total runtime: 5.36s
+2026-04-08 11:38:02,417 - inference - INFO - Results written to: inference_results.json
+2026-04-08 11:39:05,893 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 11:39:05,893 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 11:39:05,948 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 11:39:07,744 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:39:08,869 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:39:10,025 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:39:11,019 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:39:11,942 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:39:11,945 - inference - INFO - =======================================================
+2026-04-08 11:39:11,945 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 11:39:11,945 - inference - INFO - Total runtime: 6.05s
+2026-04-08 11:39:11,946 - inference - INFO - Results written to: inference_results.json
+2026-04-08 11:52:31,642 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 11:52:31,642 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 11:52:31,693 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 11:52:32,825 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:33,645 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:34,640 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:35,726 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:36,612 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:36,615 - inference - INFO - =======================================================
+2026-04-08 11:52:36,615 - inference - INFO - FINAL: 3/3 tasks passed
+2026-04-08 11:52:36,615 - inference - INFO - Total runtime: 4.97s
+2026-04-08 11:52:36,616 - inference - INFO - Results written to: inference_results.json
+2026-04-08 11:52:48,761 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 11:52:48,762 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 11:52:48,813 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 11:52:50,233 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:50,847 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:51,870 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:53,191 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:53,894 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:52:53,897 - inference - INFO - =======================================================
+2026-04-08 11:52:53,897 - inference - INFO - FINAL: 2/3 tasks passed
+2026-04-08 11:52:53,898 - inference - INFO - Total runtime: 5.14s
+2026-04-08 11:52:53,899 - inference - INFO - Results written to: inference_results.json
+2026-04-08 11:53:12,534 - inference - INFO - AlphaTrader-RL | OpenEnv Inference
+2026-04-08 11:53:12,534 - inference - INFO - Seed: 42 | Initial capital: 100,000
+2026-04-08 11:53:12,581 - inference - INFO - Loaded data: 14738 rows | symbols: ['GOLDBEES.NS', 'HINDALCO.NS', 'NMDC.NS', 'SILVERBEES.NS', 'SUZLON.NS', 'TATAPOWER.NS', 'TATASTEEL.NS', 'VEDL.NS', 'YESBANK.NS', '^NSEI', 'RELIANCE.NS', 'BHARATFORG.NS', 'WIPRO.NS', 'INFY.NS', 'HCLTECH.NS', 'HDFCBANK.NS']
+2026-04-08 11:53:14,810 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:53:16,652 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:53:19,006 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:53:20,517 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:53:21,899 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-08 11:53:21,903 - inference - INFO - =======================================================
+2026-04-08 11:53:21,903 - inference - INFO - FINAL: 2/3 tasks passed
+2026-04-08 11:53:21,904 - inference - INFO - Total runtime: 9.37s
+2026-04-08 11:53:21,905 - inference - INFO - Results written to: inference_results.json

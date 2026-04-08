@@ -29,6 +29,11 @@ import random
 import argparse
 import yfinance as yf
 
+from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import numpy as np
 import pandas as pd
 
@@ -57,6 +62,32 @@ _con_handler.setFormatter(_fmt)
 
 log.addHandler(_file_handler)
 log.addHandler(_con_handler)
+
+# ---------------------------------------------------------------------------
+# LLM Configuration
+# ---------------------------------------------------------------------------
+API_BASE_URL = os.environ.get("API_BASE_URL", "https://api-inference.huggingface.co/v1")
+MODEL_NAME   = os.environ.get("MODEL_NAME", "mistralai/Mistral-7B-Instruct-v0.3")
+
+API_KEY = os.environ.get("GROQ_API_KEY") or os.environ.get("HF_TOKEN", "dummy")
+llm_client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
+
+
+def get_llm_explanation(symbol, action, rsi, macd_hist, dist_ema_50, ret):
+    try:
+        response = llm_client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": 
+                f"Stock: {symbol}. Action: {action}. RSI={rsi:.1f}, "
+                f"MACD={macd_hist:.3f}, EMA50_dist={dist_ema_50:.3f}, "
+                f"Return so far={ret:.2f}%. "
+                f"Explain this trading decision in one sentence."}],
+            max_tokens=60,
+            timeout=5,
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        return f"LLM error: {str(e)}"
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -282,6 +313,18 @@ def run_task1(df: pd.DataFrame) -> dict:
     ph    = result.pop("portfolio_history")
     grade = grade_task1(ph, INITIAL_CAPITAL)
 
+    # LLM Explanation
+    last_idx = min(env.current_step, env.n_steps - 1)
+    rsi_val  = float(env.df.loc[last_idx, "rsi_14"]) if "rsi_14" in env.df.columns else 50.0
+    macd_val = float(env.df.loc[last_idx, "macd_histogram"]) if "macd_histogram" in env.df.columns else 0.0
+    dist_val = float(env.df.loc[last_idx, "dist_ema_50"]) if "dist_ema_50" in env.df.columns else 0.0
+    
+    act_int = get_action(env, TASK1_SYMBOL, task_id="task1")
+    act_str = {0: "HOLD", 1: "BUY", 2: "SELL"}.get(act_int, "HOLD")
+    
+    insight = get_llm_explanation(TASK1_SYMBOL, act_str, rsi_val, macd_val, dist_val, result['total_return_pct'])
+    print(f"LLM Insight: {insight}")
+
     print(f"Return : {result['total_return_pct']:.4f}%")
     print(f"Sharpe : {result['sharpe_ratio']:.4f}")
     print(f"MaxDD  : {result['max_drawdown_pct']:.4f}%")
@@ -314,6 +357,19 @@ def run_task2(df: pd.DataFrame) -> dict:
             "sharpe":     result["sharpe_ratio"],
             "max_dd":     result["max_drawdown_pct"],
         }
+        
+        # LLM Explanation
+        last_idx = min(env.current_step, env.n_steps - 1)
+        rsi_val  = float(env.df.loc[last_idx, "rsi_14"]) if "rsi_14" in env.df.columns else 50.0
+        macd_val = float(env.df.loc[last_idx, "macd_histogram"]) if "macd_histogram" in env.df.columns else 0.0
+        dist_val = float(env.df.loc[last_idx, "dist_ema_50"]) if "dist_ema_50" in env.df.columns else 0.0
+        
+        act_int = get_action(env, symbol, task_id="task2")
+        act_str = {0: "HOLD", 1: "BUY", 2: "SELL"}.get(act_int, "HOLD")
+        
+        insight = get_llm_explanation(symbol, act_str, rsi_val, macd_val, dist_val, result['total_return_pct'])
+        print(f"LLM Insight: {insight}")
+
         print(f"{symbol:<20}  return={result['total_return_pct']:>7.2f}%  sharpe={result['sharpe_ratio']:>6.3f}")
 
     grade = grade_task2(all_ph, INITIAL_CAPITAL)
@@ -351,6 +407,18 @@ def run_task3(df: pd.DataFrame) -> dict:
 
     ph    = result.pop("portfolio_history")
     grade = grade_task3(ph, INITIAL_CAPITAL)
+
+    # LLM Explanation
+    last_idx = min(env.current_step, env.n_steps - 1)
+    rsi_val  = float(env.df.loc[last_idx, "rsi_14"]) if "rsi_14" in env.df.columns else 50.0
+    macd_val = float(env.df.loc[last_idx, "macd_histogram"]) if "macd_histogram" in env.df.columns else 0.0
+    dist_val = float(env.df.loc[last_idx, "dist_ema_50"]) if "dist_ema_50" in env.df.columns else 0.0
+    
+    act_int = get_action(env, TASK3_SYMBOL, task_id="task3")
+    act_str = {0: "HOLD", 1: "BUY", 2: "SELL"}.get(act_int, "HOLD")
+    
+    insight = get_llm_explanation(TASK3_SYMBOL, act_str, rsi_val, macd_val, dist_val, result['total_return_pct'])
+    print(f"LLM Insight: {insight}")
 
     print(f"Return : {result['total_return_pct']:.4f}%")
     print(f"MaxDD  : {result['max_drawdown_pct']:.4f}%")
